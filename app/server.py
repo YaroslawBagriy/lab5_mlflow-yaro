@@ -76,9 +76,9 @@ app = FastAPI(
 )
 
 
-@app.get("/", tags=["system"], summary="Health check")
-async def health():
-    return {"status": "ok", "model_name": MODEL_NAME, "version": _current_version}
+@app.get("/health", tags=["health"], summary="Health check")
+def health():
+    return {"status": "ok", "model_uri": MODEL_URI}
 
 
 @app.get("/version", response_model=VersionResponse, tags=["model"], summary="Endpoint to view the current served version")
