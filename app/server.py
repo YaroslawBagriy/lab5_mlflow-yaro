@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field, conlist
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:5000")
 MODEL_NAME          = os.getenv("MODEL_NAME", "iris-classifier")
 DEFAULT_VERSION     = os.getenv("MODEL_VERSION", "1")
+MODEL_URI = f"models:/{MODEL_NAME}/{MODEL_VERSION}"
 
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
